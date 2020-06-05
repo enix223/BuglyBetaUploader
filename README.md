@@ -5,9 +5,17 @@
 在根目录下的build.gralde文件的depandencies（buildscript部分）中添加：
 
 ```
- dependencies {
-        classpath 'com.tencent.bugly.plugin:betauploader:latest.release'
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            url 'https://dl.bintray.com/enix223/maven'
+        }
     }
+    dependencies {
+        classpath 'com.gdlinkjob.bugly.plugin:betauploader:1.0.0'
+    }
+}
 ```
 
 其中latest.release为插件最新版，如需指定具体版本则指定如1.0.0。
