@@ -14,13 +14,7 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
-        maven {
-            url 'https://jalenchen.bintray.com/maven/'
-        }
         google()
     }
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
-}

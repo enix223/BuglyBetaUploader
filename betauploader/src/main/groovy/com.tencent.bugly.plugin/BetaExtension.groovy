@@ -22,4 +22,108 @@ public class BetaExtension {
     public Boolean enable = true // 插件开关
     public Boolean autoUpload = false // 是否自动上传
     public Boolean debugOn = false // debug模式是否上传
+
+    String getAppId() {
+        return appId
+    }
+
+    void setAppId(String appId) {
+        this.appId = appId
+    }
+
+    String getAppKey() {
+        return appKey
+    }
+
+    void setAppKey(String appKey) {
+        this.appKey = appKey
+    }
+
+    String getTitle() {
+        return title
+    }
+
+    void setTitle(String title) {
+        this.title = title
+    }
+
+    String getDesc() {
+        return desc
+    }
+
+    void setDesc(String desc) {
+        this.desc = desc
+    }
+
+    int getSecret() {
+        return secret
+    }
+
+    void setSecret(int secret) {
+        this.secret = secret
+    }
+
+    String getUsers() {
+        return users
+    }
+
+    void setUsers(String users) {
+        this.users = users
+    }
+
+    String getPassword() {
+        return password
+    }
+
+    void setPassword(String password) {
+        this.password = password
+    }
+
+    int getDownload_limit() {
+        return download_limit
+    }
+
+    void setDownload_limit(int download_limit) {
+        this.download_limit = download_limit
+    }
+
+    String getExpId() {
+        return expId
+    }
+
+    void setExpId(String expId) {
+        this.expId = expId
+    }
+
+    String getApkFile() {
+        return apkFile
+    }
+
+    void setApkFile(String apkFile) {
+        this.apkFile = apkFile
+    }
+
+    Boolean getEnable() {
+        return enable
+    }
+
+    void setEnable(Boolean enable) {
+        this.enable = enable
+    }
+
+    Boolean getAutoUpload() {
+        return autoUpload
+    }
+
+    void setAutoUpload(Boolean autoUpload) {
+        this.autoUpload = autoUpload
+    }
+
+    Boolean getDebugOn() {
+        return debugOn
+    }
+
+    void setDebugOn(Boolean debugOn) {
+        this.debugOn = debugOn
+    }
 }

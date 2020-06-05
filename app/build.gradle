@@ -1,12 +1,9 @@
 buildscript {
     repositories {
-        jcenter()
-        maven {
-            url 'https://dl.bintray.com/enix223/maven'
-        }
+        mavenLocal()
     }
     dependencies {
-        classpath 'com.gdlinkjob.bugly.plugin:betauploader:1.0.0'
+        classpath 'com.gdlinkjob.bugly.plugin:betauploader:1.0.6'
     }
 }
 
@@ -15,13 +12,32 @@ apply plugin: 'com.android.application'
 apply plugin: 'groovyx.grooid.groovy-android'
 apply plugin: 'com.tencent.bugly.plugin.betauploader' // 应用上传apk插件
 
+// 内测分发 Gradle 插件使用指南
+// https://bugly.qq.com/docs/utility-tools/plugin-gradle/
+afterEvaluate {
+    android.applicationVariants.all { variant ->
+        def buglyAppId = null
+        def buglyAppKey = null
+        switch (variant.name) {
+            case 'app1Release':
+                buglyAppId = '900037672'
+                buglyAppKey = 'bQvYLRrBNiqUctfi'
+                break
+            case 'app2Release':
+                buglyAppId = '900036881'
+                buglyAppKey = 'WROW4ybyWdWk59Qd'
+                break
+        }
+        variant.ext.buglyAppId = buglyAppId
+        variant.ext.buglyAppKey = buglyAppKey
+    }
+}
+
 // beta配置
 beta {
-    appId = '900037672'
-    appKey = 'bQvYLRrBNiqUctfi'
-    title = "测试55555"
-    desc = "你没事吧1111"
-    enable = false
+    title = "测试"
+    desc = "你没事吧"
+    enable = true
     autoUpload = true
     debugOn = true
 }
@@ -56,6 +72,18 @@ android {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
+        }
+    }
+
+    flavorDimensions "customer"
+
+    productFlavors {
+        app1 {
+            dimension "customer"
+        }
+
+        app2 {
+            dimension "customer"
         }
     }
 }

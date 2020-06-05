@@ -93,8 +93,16 @@ public class BetaPlugin implements Plugin<Project> {
      */
     private UploadInfo generateUploadInfo(Object variant) {
         UploadInfo uploadInfo = new UploadInfo()
+
         uploadInfo.appId = project.beta.appId
+        if (variant.ext.buglyAppId != null) {
+            uploadInfo.appId = variant.ext.buglyAppId
+        }
         uploadInfo.appKey = project.beta.appKey
+        if (variant.ext.buglyAppKey != null) {
+            uploadInfo.appKey = variant.ext.buglyAppKey
+        }
+
         if (project.beta.title == null) {
             uploadInfo.title = project.getName() + "-" + variant.getVersionName() + variant.getVersionCode()
         } else {

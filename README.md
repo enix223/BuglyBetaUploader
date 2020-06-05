@@ -13,7 +13,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'com.gdlinkjob.bugly.plugin:betauploader:1.0.0'
+        classpath 'com.gdlinkjob.bugly.plugin:betauploader:1.0.6'
     }
 }
 ```
