@@ -1,6 +1,6 @@
-# Beta Gradle插件使用说明
+# Beta Gradle插件使用说明 (适配gradle-3.x，支持多渠道)
 
-
+具体参考https://bugly.qq.com/docs/utility-tools/plugin-gradle/
 
 在根目录下的build.gralde文件的depandencies（buildscript部分）中添加：
 
